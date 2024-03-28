@@ -2,9 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: NodePortSrv
-selector:
- app: new_app
+
 spec:
+  selector:
+    app: new_app
   type: NodePort
   ports:
   - port: 80
