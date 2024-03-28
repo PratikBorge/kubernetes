@@ -1,0 +1,19 @@
+apiVersion: 
+kind: Service
+metadata:
+  name: NodePortSrv
+selector:
+ app: new_app
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
+    name: nginx
+    protocol: TCP
+  - port: 80
+    targetPort: 8080
+    nodePort: 30081
+    name: tomcat
+    protocol: TCP
