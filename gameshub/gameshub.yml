@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod 
 metadata: 
-  name: hub 
+  name: caddy 
   namespace: prat 
   labels: 
    app: myapp
 spec: 
  containers: 
-  - name: ghub 
-    image: lupohan44/games_hub:latest
+  - name: cad 
+    image: caddy
     ports: 
-    - containerPort: 3000
+    - containerPort: 80
       protocol: TCP 
 --- 
 apiVersion: v1
@@ -23,9 +23,9 @@ spec:
    app: myapp
   type: NodePort 
   ports: 
-   - port: 3000
-     targetPort: 3000
+   - port: 80
+     targetPort: 80
      protocol: TCP 
      nodePort: 30080
-     name: ghub
+     name: cad
 ...
