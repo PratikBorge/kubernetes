@@ -23,7 +23,7 @@ spec:
      - containerPort: 4200
        protocol: TCP
 ---
-apiVersion: v!
+apiVersion: v1
 kind: Service 
 metadata: 
   name: myserv
