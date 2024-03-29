@@ -19,13 +19,12 @@ metadata:
    name: myserv 
    namespace: prat 
 spec:
-   selector:
+  selector:
     app: game
-    type: NodePort 
-   ports:
+  type: NodePort 
+  ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30080
       name: game1
 ...
