@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: game 
+  labels:
+   app: game
+  namespace: prat 
+spec: 
+  containers: 
+   - name: 2048
+     image: blackicebird/2048:latest 
+     ports:
+     - containerPort: 80
+       protocol: TCP 
+---
+apiVersion: v1
+kind: Service 
+metadata: 
+   name: myserv 
+   namespace: prat 
+spec:
+   selector:
+    app: game
+    type: NodePort 
+   ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+      name: 2048
+...
