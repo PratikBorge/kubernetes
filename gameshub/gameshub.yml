@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: hub 
+  namespace: prat 
+  labels: 
+   app: myapp
+spec: 
+ containers: 
+  - name: ghub 
+    image: lupohan44/games_hub:latest
+    ports: 
+    - containerPort: 3000
+      protocol: TCP 
+--- 
+apiVersion: v1
+kind: Service 
+metadata:
+  name: serv1 
+  namespace:  prat 
+spec: 
+  selector: 
+   app: myapp
+  type: NodePort 
+  ports: 
+   - port: 3000 
+     targetPort: 3000
+     protocol: TCP 
+     nodePort: 30080
+     name: ghub
+...
