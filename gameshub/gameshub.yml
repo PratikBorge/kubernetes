@@ -10,7 +10,7 @@ spec:
   - name: ghub 
     image: lupohan44/games_hub:latest
     ports: 
-    - containerPort: 3000
+    - containerPort: 8000
       protocol: TCP 
 --- 
 apiVersion: v1
@@ -23,8 +23,8 @@ spec:
    app: myapp
   type: NodePort 
   ports: 
-   - port: 3000 
-     targetPort: 3000
+   - port: 8000 
+     targetPort: 8000
      protocol: TCP 
      nodePort: 30080
      name: ghub
