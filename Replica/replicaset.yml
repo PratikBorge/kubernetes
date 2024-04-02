@@ -7,7 +7,8 @@ metadata:
 spec: 
   replicas: 4
   selector: 
-    - { key: app , operator: In , values: [rsapp]}
+    matchExpressions:
+     - { key: app , operator: In , values: [rsapp]}
   template: 
      metadata: 
         name: rs 
@@ -20,4 +21,3 @@ spec:
             ports: 
               - containerPort: 80
                 protocol: TCP 
-                
