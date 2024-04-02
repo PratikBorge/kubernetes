@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: rpc 
+  labels: 
+   app: rpcapp
+spec: 
+  replicas: 4
+  selector:
+   app: rpcapp
+  template:
+   metadata:
+    labels:
+      app: rpcapp
+      name: rpc
+   spec: 
+     containers: 
+     - name: rpc 
+       image: nginx 
+       ports:
+       - containerport: 80
+         protocol: TCP 
+
+

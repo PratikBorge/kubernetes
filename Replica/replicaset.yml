@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs 
+  labels: 
+    app: rsapp 
+spec: 
+  replicas: 4
+  selector: 
+    - { key: app , operator: In , values: [rsapp]}
+  template: 
+     metadata: 
+        name: rs 
+        labels: 
+          app: rsapp
+     spec: 
+        containers: 
+          - name: rs 
+            image: nginx
+            ports: 
+              - containerPort: 80
+                protocol: TCP 
+                
