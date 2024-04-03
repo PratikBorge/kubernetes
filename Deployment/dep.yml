@@ -8,8 +8,8 @@ spec:
   strategy: 
     type: RollingUpdate 
     rollingUpdate: 
-      maxSurge: 4
-      maxUnavailable: 1
+      maxSurge: 1
+      maxUnavailable: 2
   replicas: 3 
   selector: 
       matchLabels: 
