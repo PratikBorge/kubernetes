@@ -10,7 +10,7 @@ spec:
     rollingUpdate: 
       maxSurge: 0
       maxUnavailable: 1
-  replicas: 16
+  replicas: 3
   selector: 
       matchLabels: 
         app: depapp 
