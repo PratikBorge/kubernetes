@@ -8,7 +8,7 @@ spec:
   strategy: 
     type: RollingUpdate 
     rollingUpdate: 
-      maxSurge: 7
+      maxSurge: 25
       maxUnavailable: 0
   replicas: 20
   selector: 
