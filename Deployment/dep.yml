@@ -8,9 +8,9 @@ spec:
   strategy: 
     type: RollingUpdate 
     rollingUpdate: 
-      maxSurge: 3
-      maxUnavailable: 2
-  replicas: 7
+      maxSurge: 1
+      maxUnavailable: 4
+  replicas: 10
   selector: 
       matchLabels: 
         app: depapp 
