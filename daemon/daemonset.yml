@@ -2,15 +2,17 @@ apiVersion: apps/v1
 kind: DaemonSet 
 metadata: 
    name: mydaemon 
-   lables: 
-      app : dapp 
+   labels:
+    app: mydaemon
 spec: 
     selector: 
        matchLabels: 
-          app: dapp  
+          app: mydaemon 
     template: 
        metadata: 
            name: mydaemon
+           labels: 
+              app: mydaemon
        spec: 
           containers: 
              - name:  mynginx 
