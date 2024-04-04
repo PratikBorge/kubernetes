@@ -5,7 +5,7 @@ metadata:
   labels: 
     app: dbapp 
 spec: 
-    seletor: 
+    selector: 
        matchLables: 
           app: dbapp 
     replicas: 3 
@@ -24,4 +24,4 @@ spec:
                      name: mysql 
                 env: 
                    - name: MYSQL_ROOT_PASSWORD 
-                     values: "1234"          
+                     value: "1234"          
