@@ -10,9 +10,7 @@ spec:
           app: dapp  
     template: 
        metadata: 
-           name: mydaemon 
-           lables: 
-              app: dapp 
+           name: mydaemon
        spec: 
           containers: 
              - name:  mynginx 
@@ -20,4 +18,3 @@ spec:
                ports: 
                   - containerPort: 80 
                     protocol: TCP 
-                    
