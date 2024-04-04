@@ -1,0 +1,23 @@
+apiVersion: apps/v1 
+kind: DaemonSet 
+metadata: 
+   name: mydaemon 
+   lables: 
+      app : dapp 
+spec: 
+    selector: 
+       matchLabels: 
+          app: dapp  
+    template: 
+       metadata: 
+           name: mydaemon 
+           lables: 
+              app: dapp 
+       spec: 
+          containers: 
+             - name:  mynginx 
+               image: nginx 
+               ports: 
+                  - containerPort: 80 
+                    protocol: TCP 
+                    
