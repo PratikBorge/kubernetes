@@ -5,10 +5,10 @@ metadata:
   labels: 
     app: dbapp 
 spec: 
-    selector: 
-       matchLables: 
-          app: dbapp 
     replicas: 3 
+    selector: 
+      matchLabels: 
+        app: dbapp
     template: 
       metadata: 
          name: db 
